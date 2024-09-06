@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <h1>Student Details</h1>
+    {% if student %}
+        <p>ID: {{ student.id }}</p>
+        <p>Name: {{ student.name }}</p>
+    {% else %}
+        <p>No student found with the given ID.</p>
+    {% endif %}
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
