@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{%block title%}
+edit Profile
+{%endblock%}
+{%block content%}
+{%with messages = get_flashed_messages()%}
+    {% for msg in messages %}
+        <p>{{msg}}</p>
+    {% endfor %}
+{%endwith%}
+    <h1>Edit Profile</h1>
+    <form method="post">
+        <label for="username">New Username:</label>
+        <input type="text" id="username" name="username" value="{{ user.username }}">
+        <br>
+        <label for="password">New Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password">
+        <br>
+        <button type="submit">Update Profile</button>
+    </form>
+    <form method="post" action="{{ url_for('delete_profile') }}" style="display:inline;">
+        <button type="submit">Delete Account</button>
+    </form>
+    <a href="{{ url_for('user.profile') }}">Back to Profile</a>
+
+
+{% endblock %}

@@ -29,7 +29,14 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
               </li>
-              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('edit_profile') }}">Edit Profile</a>
+            </li>
+            <li class="nav-item">
+                <form method="post" action="{{ url_for('delete_profile') }}" style="display:inline;">
+                    <button type="submit" class="nav-link">Delete Account</button>
+                </form>
+            </li>
             </ul>
           </div>
         </div>
